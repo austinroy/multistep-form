@@ -41,13 +41,15 @@ class MainForm extends Component {
         case 1:
             return <UserDetails 
                     nextStep={this.nextStep} 
-                    handleChange = {this.handleChange} 
+                    handleChange = {this.handleChange}
+                    values={values}
                     />
         case 2:
             return <PersonalDetails 
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
-                    handleChange = {this.handleChange} 
+                    handleChange = {this.handleChange}
+                    values={values}
                     />
         case 3:
             return <Confirmation 
