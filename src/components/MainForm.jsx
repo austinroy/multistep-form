@@ -32,11 +32,15 @@ class MainForm extends Component {
     handleChange = input => event => {
         this.setState({ [input] : event.target.value })
     }
+
+    toggleUtil = value => {
+        this.setState({ util: value})
+    }
     
     render(){
         const {step} = this.state;
-        const { firstName, lastName, email, age, city, country } = this.state;
-        const values = { firstName, lastName, email, age, city, country };
+        const { firstName, lastName, email, age, city, country, util } = this.state;
+        const values = { firstName, lastName, email, age, city, country, util };
         switch(step) {
         case 1:
             return <UserDetails 
@@ -50,6 +54,7 @@ class MainForm extends Component {
                     prevStep={this.prevStep}
                     handleChange = {this.handleChange}
                     values={values}
+                    toggleUtil={this.toggleUtil}
                     />
         case 3:
             return <Confirmation 

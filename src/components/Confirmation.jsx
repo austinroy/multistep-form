@@ -13,7 +13,7 @@ class Confirmation extends Component{
     }
 
     render(){
-        const {values: { firstName, lastName, email, age, city, country }} = this.props;
+        const {values: { firstName, lastName, email, age, city, country, util }} = this.props;
 
         return(
             <div>
@@ -31,7 +31,7 @@ class Confirmation extends Component{
                     <List.Item>
                         <List.Icon name='mail' />
                         <List.Content>
-                            <a href='mailto:jack@semantic-ui.com'>{email}</a>
+                            <a href='mailto:me@example.com'>{email}</a>
                         </List.Content>
                     </List.Item>
                     <List.Item>
@@ -41,6 +41,10 @@ class Confirmation extends Component{
                     <List.Item>
                         <List.Icon name='marker' />
                         <List.Content>{city}, {country}</List.Content>
+                    </List.Item>
+                    <List.Item>
+                        <List.Icon name='marker' />
+                        <List.Content>Util: {util}</List.Content>
                     </List.Item>
                 </List>
 

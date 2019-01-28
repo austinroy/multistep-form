@@ -33,6 +33,19 @@ class PersonalDetails extends Component{
                 />
             </Form.Field>
             <Form.Field>
+                <label>Util</label>
+                <input
+                    type="button"
+                    value="yes"
+                    onClick={() => this.props.toggleUtil("yes")}
+                />
+                <input
+                    type="button"
+                    value="no"
+                    onClick={() => this.props.toggleUtil("no")}
+                />
+            </Form.Field>
+            <Form.Field>
                 <label>Country</label>
                 <input placeholder='Country'
                 onChange={this.props.handleChange('country')}
