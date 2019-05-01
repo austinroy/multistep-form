@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
-import { throws } from 'assert';
 
 class PersonalDetails extends Component{
     saveAndContinue = (e) => {
@@ -14,15 +13,16 @@ class PersonalDetails extends Component{
     }
 
     render(){
+        const {values: {firstName}} = this.props;
         const { values } = this.props
         return(
         <Form color='blue' >
-            <h1 className="ui centered">Enter Personal Details</h1>
+            <h1 className="ui centered"><b>{firstName}</b>, Enter Personal Details</h1>
             <Form.Field>
-                <label>Age</label>
-                <input placeholder='Age'
-                onChange={this.props.handleChange('age')}
-                defaultValue={values.age}
+                <label>Street Address</label>
+                <input placeholder='123 Maple Street'
+                onChange={this.props.handleChange('streetAddress')}
+                defaultValue={values.streetAddress}
                 />
             </Form.Field>
             <Form.Field>
@@ -33,14 +33,21 @@ class PersonalDetails extends Component{
                 />
             </Form.Field>
             <Form.Field>
-                <label>Country</label>
-                <input placeholder='Country'
-                onChange={this.props.handleChange('country')}
-                defaultValue={values.country}
+                <label>State/Us Territory</label>
+                <input placeholder='TX'
+                onChange={this.props.handleChange('state')}
+                defaultValue={values.state}
+                />
+            </Form.Field>
+            <Form.Field>
+                <label>Zip Code</label>
+                <input placeholder='72753'
+                onChange={this.props.handleChange('zip')}
+                defaultValue={values.zip}
                 />
             </Form.Field>
             <Button onClick={this.back}>Back</Button>
-            <Button onClick={this.saveAndContinue}>Save And Continue </Button>
+            <Button onClick={this.saveAndContinue}>Continue</Button>
         </Form>
         )
     }

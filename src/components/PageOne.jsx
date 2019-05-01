@@ -38,7 +38,7 @@ class UserDetails extends Component{
                     defaultValue={values.email}
                     />
                 </Form.Field>
-                <Button onClick={this.saveAndContinue}>Save And Continue </Button>
+                <Button onClick={this.saveAndContinue}>Continue</Button>
             </Form>
         )
     }

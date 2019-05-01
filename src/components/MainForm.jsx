@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import UserDetails from './UserDetails';
-import PersonalDetails from './PersonalDetails';
+import PageOne from './PageOne';
+import PageTwo from './PageTwo';
 import Confirmation from './Confirmation';
-import Success from './Success';
+import Results from './Results';
 
 class MainForm extends Component {
     state = {
@@ -10,9 +10,10 @@ class MainForm extends Component {
         firstName: '',
         lastName: '',
         email: '',
-        age: '',
+        streetAddress: '',
         city: '',
-        country: ''
+        state: '',
+        zip: ''
     }
 
     nextStep = () => {
@@ -35,31 +36,37 @@ class MainForm extends Component {
     
     render(){
         const {step} = this.state;
-        const { firstName, lastName, email, age, city, country } = this.state;
-        const values = { firstName, lastName, email, age, city, country };
-        switch(step) {
-        case 1:
-            return <UserDetails 
-                    nextStep={this.nextStep} 
-                    handleChange = {this.handleChange}
-                    values={values}
-                    />
-        case 2:
-            return <PersonalDetails 
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange = {this.handleChange}
-                    values={values}
-                    />
-        case 3:
-            return <Confirmation 
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    values={values}
-                    />
-        case 4:
-            return <Success />
-        }
+        const { firstName, lastName, email, streetAddress, city, state, zip} = this.state;
+        const values = { firstName, lastName, email, streetAddress, city, state, zip};
+        switch (step) {
+          case 1:
+            return (
+              <PageOne
+                nextStep={this.nextStep}
+                handleChange={this.handleChange}
+                values={values}
+              />
+            );
+          case 2:
+            return (
+              <PageTwo
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
+              />
+            );
+          case 3:
+            return (
+              <Confirmation
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                values={values}
+              />
+            );
+          default:
+            return <Results values={values} />;
+        }   
     }
 }
 
