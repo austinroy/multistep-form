@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import little from '../assets/svg/chickenLittle.svg';
-import {Container, Header, Button, List } from 'semantic-ui-react';
+import {Container, Header, Button, List, Icon } from 'semantic-ui-react';
 
 class Confirmation extends Component{
     saveAndContinue = (e) => {
@@ -30,27 +30,37 @@ class Confirmation extends Component{
       <List.Icon name='user circle' size='large' verticalAlign='middle' />
       <List.Content>
         <List.Header as='a'>{firstName} {lastName}</List.Header>
-        <List.Description>Full Name</List.Description>
+        
       </List.Content>
     </List.Item>
     <List.Item>
       <List.Icon name='mail' size='large' verticalAlign='middle' />
       <List.Content>
         <List.Header as='a'>{email}</List.Header>
-        <List.Description>Email</List.Description>
+        
       </List.Content>
     </List.Item>
     <List.Item>
       <List.Icon name='home' size='large' verticalAlign='middle' />
       <List.Content>
         <List.Header as='a'>{streetAddress} {city}, {state} {zip} </List.Header>
-        <List.Description>Full Physical Address</List.Description>
+        
       </List.Content>
     </List.Item>
   </List>
 
-                <Button onClick={this.back}>Back</Button>
-                <Button onClick={this.saveAndContinue}>Submit</Button>
+  <Button animated onClick={this.back}>
+      <Button.Content visible>Back</Button.Content>
+      <Button.Content hidden>
+        <Icon name='arrow left' />
+      </Button.Content>
+    </Button>
+            <Button animated onClick={this.saveAndContinue}>
+      <Button.Content visible>Submit</Button.Content>
+      <Button.Content hidden>
+        <Icon name='life ring' />
+      </Button.Content>
+    </Button>
             
             </Container>
         )

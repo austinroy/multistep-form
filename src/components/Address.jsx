@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import little from '../assets/svg/chickenLittle.svg';
-import { Container, Header, Form, Button } from 'semantic-ui-react';
+import { Container, Header, Form, Icon, Button } from 'semantic-ui-react';
 
 class PageTwo extends Component {
   saveAndContinue = e => {
@@ -54,8 +54,18 @@ class PageTwo extends Component {
             defaultValue={values.zip}
           />
         </Form.Field>
-        <Button onClick={this.back}>Back</Button>
-        <Button onClick={this.saveAndContinue}>Continue</Button>
+        <Button animated onClick={this.back}>
+      <Button.Content visible>Back</Button.Content>
+      <Button.Content hidden>
+        <Icon name='arrow left' />
+      </Button.Content>
+    </Button>
+            <Button animated onClick={this.saveAndContinue}>
+      <Button.Content visible>Continue</Button.Content>
+      <Button.Content hidden>
+        <Icon name='arrow right' />
+      </Button.Content>
+    </Button>
         </Form>
       </Container>
     );
