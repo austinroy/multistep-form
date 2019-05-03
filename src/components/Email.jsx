@@ -27,7 +27,7 @@ class PageTwo extends Component{
             <Form.Field>
                     <input
                     type='email'
-                    placeholder='email'
+                    placeholder='Email'
                     onChange={this.props.handleChange('email')}
                     defaultValue={values.email}
                     />

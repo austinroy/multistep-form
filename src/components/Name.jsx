@@ -15,9 +15,8 @@ class Name extends Component{
             <Container textAlign="center">
             <Form color='green' >
             
-            <Header textAlign="center">Hi! I'm Little.</Header>
+            <Header textAlign="center">Hi! I'm Little.  I'll be preparing your Risk Assessment today.</Header>
             <img src={little} height="124" width="124" alt="heat-wave"/>
-            <Header textAlign="center">I'll be preparing your Risk Assessment today.</Header>
             <Header textAlign="center">What's your name?</Header>
 
                 <Form.Field>

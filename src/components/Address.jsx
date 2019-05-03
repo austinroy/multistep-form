@@ -28,28 +28,28 @@ class PageTwo extends Component {
         <Form color='blue' >
         <Form.Field>
           <input
-            placeholder="street'"
+            placeholder="Street"
             onChange={this.props.handleChange('streetAddress')}
             defaultValue={values.streetAddress}
           />
         </Form.Field>
         <Form.Field>
           <input
-            placeholder="city"
+            placeholder="City"
             onChange={this.props.handleChange('city')}
             defaultValue={values.city}
           />
         </Form.Field>
         <Form.Field>
           <input
-            placeholder="state'"
+            placeholder="State"
             onChange={this.props.handleChange('state')}
             defaultValue={values.state}
           />
         </Form.Field>
         <Form.Field>
           <input
-            placeholder="zip"
+            placeholder="Zip"
             onChange={this.props.handleChange('zip')}
             defaultValue={values.zip}
           />
