@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, List } from 'semantic-ui-react';
+import little from '../assets/svg/chickenLittle.svg';
+import {Container, Header, Button, List } from 'semantic-ui-react';
 
 class Confirmation extends Component{
     saveAndContinue = (e) => {
@@ -16,17 +17,18 @@ class Confirmation extends Component{
        const {values: { firstName, lastName, email, streetAddress, city, state, zip }} = this.props;
 
         return(
+            <Container textAlign="center">
+        <Header textAlign="center">
+          Thanks for your patience!
+        </Header>
+        <img src={little} height="124" width="124" alt="heat-wave" />
+        <Header textAlign="center">Please validate your info:</Header>
+
             <div>
-                <h1 className="ui centered">Confirm your Details</h1>
-                <p>{firstName}, Click Confirm if the following details have been correctly entered</p>
                 <List>
                     <List.Item>
                         <List.Icon name='users' />
-                        <List.Content>First Name: {firstName}</List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Icon name='users' />
-                        <List.Content>Last Name: {lastName}</List.Content>
+                        <List.Content>{firstName} {lastName}</List.Content>
                     </List.Item>
                     <List.Item>
                         <List.Icon name='mail' />
@@ -43,6 +45,7 @@ class Confirmation extends Component{
                 <Button onClick={this.back}>Back</Button>
                 <Button onClick={this.saveAndContinue}>Submit</Button>
             </div>
+            </Container>
         )
     }
 }

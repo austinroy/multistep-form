@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'semantic-ui-react';
+import little from '../assets/svg/chickenLittle.svg';
+import { Header, Container, Form, Button } from 'semantic-ui-react';
 
-class UserDetails extends Component{
+class Name extends Component{
 
     saveAndContinue = (e) => {
         e.preventDefault()
@@ -11,10 +12,15 @@ class UserDetails extends Component{
     render(){
         const { values } = this.props;
         return(
+            <Container textAlign="center">
             <Form color='green' >
-                <h1 className="ui centered">Enter User Details</h1>
+            
+            <Header textAlign="center">Hi! I'm Little.</Header>
+            <img src={little} height="124" width="124" alt="heat-wave"/>
+            <Header textAlign="center">I'll be preparing your Risk Assessment today.</Header>
+            <Header textAlign="center">What's your name?</Header>
+
                 <Form.Field>
-                    <label>First Name</label>
                     <input
                     placeholder='First Name'
                     onChange={this.props.handleChange('firstName')}
@@ -22,26 +28,17 @@ class UserDetails extends Component{
                     />
                 </Form.Field>
                 <Form.Field>
-                    <label>Last Name</label>
                     <input
                     placeholder='Last Name'
                     onChange={this.props.handleChange('lastName')}
                     defaultValue={values.lastName}
                     />
                 </Form.Field>
-                <Form.Field>
-                    <label>Email Address</label>
-                    <input
-                    type='email'
-                    placeholder='Email Address'
-                    onChange={this.props.handleChange('email')}
-                    defaultValue={values.email}
-                    />
-                </Form.Field>
                 <Button onClick={this.saveAndContinue}>Continue</Button>
             </Form>
+            </Container>
         )
     }
 }
 
-export default UserDetails;
+export default Name;

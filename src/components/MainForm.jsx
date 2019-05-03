@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import PageOne from './PageOne';
-import PageTwo from './PageTwo';
+import Name from './Name';
+import Email from './Email';
+import Address from './Address';
 import Confirmation from './Confirmation';
 import Results from './Results';
 
@@ -13,7 +14,8 @@ class MainForm extends Component {
         streetAddress: '',
         city: '',
         state: '',
-        zip: ''
+        zip: '',
+        id: ''
     }
 
     nextStep = () => {
@@ -33,6 +35,7 @@ class MainForm extends Component {
     handleChange = input => event => {
         this.setState({ [input] : event.target.value })
     }
+
     
     render(){
         const {step} = this.state;
@@ -41,7 +44,7 @@ class MainForm extends Component {
         switch (step) {
           case 1:
             return (
-              <PageOne
+              <Name
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
@@ -49,14 +52,23 @@ class MainForm extends Component {
             );
           case 2:
             return (
-              <PageTwo
+              <Email
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange={this.handleChange}
                 values={values}
               />
             );
-          case 3:
+            case 3:
+            return (
+              <Address
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
+              />
+            );
+          case 4:
             return (
               <Confirmation
                 nextStep={this.nextStep}
